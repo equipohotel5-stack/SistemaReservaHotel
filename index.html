@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel - Inicio Sesión & Registro</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('fondo.jpg')no-repeat center center/cover;
+    }
+
+    .container {
+      width: 400px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .forms {
+      display: flex;
+      width: 200%;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .form {
+      width: 50%;
+      padding: 40px;
+    }
+
+    .form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 40px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus {
+      border-bottom: 2px solid #2575fc;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      color: #2575fc;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #2575fc;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #6a11cb;
+    }
+
+    .switch {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .switch a {
+      color: #2575fc;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .container.active .forms {
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="forms">
+      <!-- Login -->
+      <div class="form login">
+        <h2>Iniciar Sesión</h2>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" required>
+        </div>
+        <button class="btn">Ingresar</button>
+        <div class="switch">
+          ¿No tienes cuenta? <a id="toRegister">Regístrate</a>
+        </div>
+      </div>
+
+      <!-- Registro -->
+      <div class="form register">
+        <h2>Registrarse</h2>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nombre completo" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-phone"></i>
+          <input type="tel" placeholder="Teléfono" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-key"></i>
+          <input type="password" placeholder="Contraseña" required>
+        </div>
+        <button class="btn">Crear cuenta</button>
+        <div class="switch">
+          ¿Ya tienes cuenta? <a id="toLogin">Inicia sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const toRegister = document.getElementById('toRegister');
+    const toLogin = document.getElementById('toLogin');
+
+    toRegister.addEventListener('click', () => {
+      container.classList.add('active');
+    });
+
+    toLogin.addEventListener('click', () => {
+      container.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
